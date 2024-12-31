@@ -16,8 +16,17 @@ public class MainClass {
 		Session ss = sf.openSession();
 		Transaction tr = ss.beginTransaction();
 
-		Vehicle s = new Vehicle();
-		System.out.println("appln is started...");
+		Vehicle v = new Vehicle();
+		v.setVehicle_id(12-12-34);
+		v.setMake("Mahindra");
+		v.setModel("Thar");
+		v.setType("SUV");
+		v.setColor("Black");
+		ss.persist(v);
+		tr.commit();
+		ss.close();
+		
+		System.out.println(v);
 	}
 
 }
